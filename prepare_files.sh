@@ -77,5 +77,5 @@ mv ../image_resized datasets/skin/
 mv datasets/skin/image_resized datasets/skin/train_img
 
 cd ..
-python select_train_test.py
+!python select_train_test.py  #PRIMA NON C'ERA IL !
 cd pix2pixHD

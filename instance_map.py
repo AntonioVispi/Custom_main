@@ -32,17 +32,17 @@ for file in glob.glob(atri_dir+'*.png'):
 def create_instance_map(family):
 	# Create a zero filled base image
 	# Load original image
-	image = imageio.imread(image_dir+family+'.png')  #misc.imread
+	image = misc.imread(image_dir+family+'.png')  #misc.imread
 	instance_map = np.zeros(image.shape[:2], dtype=int)
 	segments = slic(img_as_float(image), n_segments=1000,
 	slic_zero=True, compactness=1, sigma=2)
 
 	for i, file in enumerate(glob.glob(atri_dir+family+'*.png')):
 		# Read Mask
-		mask = imageio.imread(file)   #misc.imread
+		mask = misc.imread(file)   #misc.imread
 		type_file = file.split('/')[-1].split('_')[3]
 		if i ==0:
-			segmentation = imageio.imread(segmentation_dir+family+'_segmentation.png', as_gray=True)  #misc.imread ... flatten=True
+			segmentation = misc.imread(segmentation_dir+family+'_segmentation.png', flatten=True)  #misc.imread ... flatten=True
 			last_lesion = 2000
 			last_background = 1000
 			for v in np.unique(segments):

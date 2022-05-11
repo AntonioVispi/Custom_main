@@ -42,7 +42,7 @@ def create_instance_map(family):
 		mask = imageio.imread(file)   #misc.imread
 		type_file = file.split('/')[-1].split('_')[3]
 		if i ==0:
-			segmentation = imageio.imread(segmentation_dir+family+'_segmentation.png', flatten=True)  #misc.imread
+			segmentation = imageio.imread(segmentation_dir+family+'_segmentation.png', as_gray=True)  #misc.imread ... flatten=True
 			last_lesion = 2000
 			last_background = 1000
 			for v in np.unique(segments):

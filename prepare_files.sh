@@ -29,7 +29,7 @@ cd image_resized
 find ../"$IMAGE_DIR" -name '*.jpg' -exec sh -c 'echo "{}"; convert "{}" -resize 1024x512\> -size 1024x512 xc:black +swap -gravity center -composite `basename "{}" .jpg`.png' \;
 cd ..
 
-python assemble_data.py
+!python assemble_data.py #PRIMA NON C'ERA IL !
 rm -r attribute_resized
 rm -r segmentation_resized
 

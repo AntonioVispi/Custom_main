@@ -24,7 +24,7 @@ for family in tqdm(file_name_arr):
 	# Create a zero filled base image
 	for i, file in enumerate(glob.glob(atri_dir+family+'*.png')):
 		# Read the image
-		read_image = imageio.imread(file, flatten=True)  # misc.imread(file, flatten=True)
+		read_image = imageio.imread(file, as_gray=True)  # misc.imread(file, flatten=True)
 		border_color = read_image[0,0]
 		read_image[read_image == border_color] = 0
 		read_image[read_image > 0] = 255

@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import misc
 import os
+import imageio
 from tqdm import tqdm
 
 atri_dir = 'attribute_resized/'

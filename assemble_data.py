@@ -67,5 +67,5 @@ for family in tqdm(file_name_arr):
 		else:
 			print('ERROR: Invalid File Found!!!!')
 	#misc.toimage(base_image, cmin=0, cmax=255).save(output_dir+family+'_semantic.png')
-	PIL_image = Image.fromarray(np.uint8(base_image))   #NUOVO
-	PIL_image.save(output_dir+family+'_semantic.png')   #NUOVO
+	PIL_image = Image.fromarray(np.uint8(base_image)).convert('RGB')   #NUOVO
+	PIL_image.save(output_dir+family+'_semantic.png')                  #NUOVO

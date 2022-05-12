@@ -1,6 +1,5 @@
 import glob
 import numpy as np
-pip install scipy==1.1.0   ###############################
 import matplotlib.pyplot as plt
 from scipy import misc
 import os

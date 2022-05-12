@@ -3,7 +3,6 @@ from skimage.exposure import rescale_intensity
 from skimage.segmentation import slic, mark_boundaries
 from skimage.util import img_as_float
 from skimage import io
-pip install scipy==1.1.0
 from scipy import misc
 import numpy as np
 import argparse

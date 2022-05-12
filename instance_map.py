@@ -4,6 +4,7 @@ from skimage.segmentation import slic, mark_boundaries
 from skimage.util import img_as_float
 from skimage import io
 #from scipy import misc
+import imageio            #aggiunto
 import numpy as np
 import argparse
 from PIL import Image
@@ -31,17 +32,17 @@ for file in glob.glob(atri_dir+'*.png'):
 def create_instance_map(family):
 	# Create a zero filled base image
 	# Load original image
-	image = misc.imread(image_dir+family+'.png')
+	image = imageio.imread(image_dir+family+'.png')            #misc.imread(image_dir+family+'.png')
 	instance_map = np.zeros(image.shape[:2], dtype=int)
 	segments = slic(img_as_float(image), n_segments=1000,
 	slic_zero=True, compactness=1, sigma=2)
 
 	for i, file in enumerate(glob.glob(atri_dir+family+'*.png')):
 		# Read Mask
-		mask = misc.imread(file)
+		mask = imageio.imread(file)                              #misc.imread(file)
 		type_file = file.split('/')[-1].split('_')[3]
 		if i ==0:
-			segmentation = misc.imread(segmentation_dir+family+'_segmentation.png', flatten=True)
+			segmentation = imageio.imread(segmentation_dir+family+'_segmentation.png', as_grey= True)     #misc.imread(segmentation_dir+family+'_segmentation.png', flatten=True)
 			last_lesion = 2000
 			last_background = 1000
 			for v in np.unique(segments):

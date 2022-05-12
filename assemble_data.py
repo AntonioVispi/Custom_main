@@ -63,4 +63,5 @@ for family in tqdm(file_name_arr):
 				base_image[base_image > 7] = 7
 		else:
 			print('ERROR: Invalid File Found!!!!')
+	cazzoooooooooooooooooooooooo
 	misc.toimage(base_image, cmin=0, cmax=255).save(output_dir+family+'_semantic.png')

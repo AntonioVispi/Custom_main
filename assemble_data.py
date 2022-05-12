@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 import matplotlib.pyplot as plt
-#from scipy import misc
+from scipy import misc
 import os
 import imageio
 from tqdm import tqdm

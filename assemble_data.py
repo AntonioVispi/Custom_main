@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import misc
 import imageio
+from PIL import Image
 import os
 from tqdm import tqdm
 
@@ -64,4 +65,7 @@ for family in tqdm(file_name_arr):
 				base_image[base_image > 7] = 7
 		else:
 			print('ERROR: Invalid File Found!!!!')
-	misc.toimage(base_image, cmin=0, cmax=255).save(output_dir+family+'_semantic.png')
+	#misc.toimage(base_image, cmin=0, cmax=255).save(output_dir+family+'_semantic.png')
+	PIL_image = Image.fromarray(np.uint8(base_image))  #.convert('RGB')
+	PIL_image.save(output_dir+family+'_semantic.png')
+

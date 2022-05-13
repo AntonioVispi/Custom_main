@@ -2,6 +2,7 @@ import glob
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import misc
+import imageio
 import os
 from tqdm import tqdm
 
